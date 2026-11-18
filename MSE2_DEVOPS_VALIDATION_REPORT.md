@@ -1,7 +1,7 @@
 # MSE-2 Software Engineering and DevOps (AI310B) — Comprehensive Practical Validation Report
 **Evaluation Shift:** Set 2 – Evening Shift  
-**Candidate Name:** Utkarsh Pandey  
-**University Roll Number:** 202401100400203  
+**Candidate Name:** Utkrisht Verma  
+**University Roll Number:** 202401100400204  
 **Section / Branch:** AIML-C / CSE AIML  
 **Auditor / Evaluator Role:** Senior DevOps Engineer & MSE-2 Practical Examiner  
 **Audit Date:** November 18, 2026  
@@ -42,20 +42,20 @@ FINAL SCORE: 97.4% (GRADE: O / OUTSTANDING)
 
 | Field | Verification Data | Status |
 | :--- | :--- | :--- |
-| **Student Name** | Utkarsh Pandey | VERIFIED |
-| **Roll Number** | `202401100400203` | VERIFIED |
+| **Student Name** | Utkrisht Verma | VERIFIED |
+| **Roll Number** | `202401100400204` | VERIFIED |
 | **Section & Branch** | AIML-C / CSE AIML | VERIFIED |
-| **GitHub Account** | [`UtkarshPandey04`](https://github.com/UtkarshPandey04) | VERIFIED |
-| **Docker Hub Account** | [`utkarshpandey04`](https://hub.docker.com/u/utkarshpandey04) | VERIFIED |
-| **Examination Fork Repo** | [`UtkarshPandey04/MSE-2-SSED-Evening`](https://github.com/UtkarshPandey04/MSE-2-SSED-Evening) | VERIFIED |
+| **GitHub Account** | [`UtkrishtVerma2005`](https://github.com/UtkrishtVerma2005) | VERIFIED |
+| **Docker Hub Account** | [`utkrishtdv`](https://hub.docker.com/u/utkrishtdv) | VERIFIED |
+| **Examination Fork Repo** | [`UtkrishtVerma2005/MSE-2-SSED-Evening`](https://github.com/UtkrishtVerma2005/MSE-2-SSED-Evening) | VERIFIED |
 | **Original Base Repo** | [`atindeRR/MSE-2-SSED-Evening`](https://github.com/atindeRR/MSE-2-SSED-Evening) | VERIFIED |
 | **Pull Request #56** | [`atindeRR/MSE-2-SSED-Evening/pull/56`](https://github.com/atindeRR/MSE-2-SSED-Evening/pull/56) | VERIFIED |
-| **PR Title Standard** | `DOCKER-SET-2 \| 202401100400203 \| Utkarsh Pandey \| AIML-C` | CONFORMS |
-| **Target Branch** | `atindeRR:main` from `UtkarshPandey04:main` | CONFORMS |
-| **Published Backend Image** | `docker.io/utkarshpandey04/backend:latest` & `:v1` | LIVE & PULLABLE |
-| **Published Frontend Image** | `docker.io/utkarshpandey04/frontend:latest` & `:v1` | LIVE & PULLABLE |
-| **CI/CD Workflow Run** | [Run #44279997777 (Success)](https://github.com/UtkarshPandey04/MSE-2-SSED-Evening/actions/runs/44279997777) | VERIFIED |
-| **Mandatory PDF Report** | `202401100400203_UTKARSH_PANDEY_SET2.pdf` (5 pages) | COMMITTED & COMPLIANT |
+| **PR Title Standard** | `DOCKER-SET-2 \| 202401100400204 \| Utkrisht Verma \| AIML-C` | CONFORMS |
+| **Target Branch** | `atindeRR:main` from `UtkrishtVerma2005:main` | CONFORMS |
+| **Published Backend Image** | `docker.io/utkrishtdv/backend:latest` & `:v1` | LIVE & PULLABLE |
+| **Published Frontend Image** | `docker.io/utkrishtdv/frontend:latest` & `:v1` | LIVE & PULLABLE |
+| **CI/CD Workflow Run** | [Run #44279997777 (Success)](https://github.com/UtkrishtVerma2005/MSE-2-SSED-Evening/actions/runs/44279997777) | VERIFIED |
+| **Mandatory PDF Report** | `202401100400204_UTKRISHT_VERMA_SET2.pdf` (5 pages) | COMMITTED & COMPLIANT |
 
 ---
 
@@ -81,9 +81,9 @@ FINAL SCORE: 97.4% (GRADE: O / OUTSTANDING)
 | **T2.5** | Redis Health Check | **PASS** | `redis-cli ping` (Returns PONG) | Backend crashing on missing Redis socket | Configured Redis healthcheck probe |
 | **T2.6** | Multi-Tier Service Dependencies | **PASS** | `condition: service_healthy` on all `depends_on` | Race conditions during parallel startup | Strictly gated backend behind postgres & redis, frontend behind backend |
 | **T2.7** | Database Host Isolation | **PASS** | Ports `5432` and `6379` not exposed to host | Potential external credential brute-forcing | Kept PostgreSQL and Redis completely unexposed to host |
-| **T3.1** | Docker Hub Repositories | **PASS** | `utkarshpandey04/backend` & `utkarshpandey04/frontend` | Repositories must be created under candidate account | Verified repositories live on Docker Hub |
+| **T3.1** | Docker Hub Repositories | **PASS** | `utkrishtdv/backend` & `utkrishtdv/frontend` | Repositories must be created under candidate account | Verified repositories live on Docker Hub |
 | **T3.2** | Docker Hub Image Tagging | **PASS** | Both images published with `:latest` and `:v1` | Missing `v1` tag causes evaluation rejection | Published both tags for backend & frontend |
-| **T3.3** | Published Image Pull Test | **PASS** | `docker pull utkarshpandey04/backend:latest` & `frontend:latest` | Images must be publicly pullable | Tested locally: SHA digests verified |
+| **T3.3** | Published Image Pull Test | **PASS** | `docker pull utkrishtdv/backend:latest` & `frontend:latest` | Images must be publicly pullable | Tested locally: SHA digests verified |
 | **T4.1** | Image-Based Compose File | **PASS** | `docker-compose.deploy.yml` with zero `build:` blocks | Accidental source code compilation in deploy mode | Explicitly stripped all `build:` blocks; verified with grep |
 | **T4.2** | Deploy Stack Live Verification | **PASS** | All 4 containers running healthy using Hub images | Host port collision during test | Isolated ports and verified all 12 Jest tests PASS |
 | **T5.1** | Frontend-to-Backend Proxy | **PASS** | Reverse proxy `/api/` and `/health` via Nginx | Direct CORS issues in browser | Nginx upstream proxy to `http://backend:3000` |
@@ -94,11 +94,11 @@ FINAL SCORE: 97.4% (GRADE: O / OUTSTANDING)
 | **T6.1** | CI/CD Workflow Architecture | **PASS** | `.github/workflows/cd.yml` triggers on push to `main` | N/A | Verified YAML syntax and structure |
 | **T6.2** | Secure Secret Handling | **PASS** | `${{ secrets.DOCKERHUB_USERNAME }}`, `DOCKERHUB_TOKEN`, `POSTGRES_PASSWORD` | Secrets leaking in build logs | Clean secret masking verified in GitHub Actions |
 | **T6.3** | Pipeline Execution Proof | **PASS** | Run #44279997777 succeeded in 1m 29s | Missing repo secrets initially failed run #1 | Configured GitHub Secrets via `gh secret set`; run #2 succeeded |
-| **T7.1** | Fork Repository Conformance | **PASS** | `UtkarshPandey04/MSE-2-SSED-Evening` forked from `atindeRR` | Standalone repo not linked to upstream | Created official GitHub fork and pushed `main` |
+| **T7.1** | Fork Repository Conformance | **PASS** | `UtkrishtVerma2005/MSE-2-SSED-Evening` forked from `atindeRR` | Standalone repo not linked to upstream | Created official GitHub fork and pushed `main` |
 | **T7.2** | Submission Pull Request | **PASS** | PR #56 open against `atindeRR/MSE-2-SSED-Evening:main` | N/A | PR created with all 7 implementation files |
-| **T7.3** | Pull Request Title Standard | **PASS** | `DOCKER-SET-2 \| 202401100400203 \| Utkarsh Pandey \| AIML-C` | Disqualification for non-standard PR title | Exact string match with question paper rule |
+| **T7.3** | Pull Request Title Standard | **PASS** | `DOCKER-SET-2 \| 202401100400204 \| Utkrisht Verma \| AIML-C` | Disqualification for non-standard PR title | Exact string match with question paper rule |
 | **T7.4** | Instructor CI Checks | **PARTIAL** | Upstream repository `ci.yml` expects uncommitted script | Upstream `check-required-files.sh` missing in instructor repo | Documented upstream issue; candidate pipeline is 100% green |
-| **T8.1** | Mandatory PDF Report Format | **PASS** | `202401100400203_UTKARSH_PANDEY_SET2.pdf` (5 pages) | Mismatched filename convention | Filename matches `ROLL_NUMBER_STUDENT_NAME_SET2.pdf` |
+| **T8.1** | Mandatory PDF Report Format | **PASS** | `202401100400204_UTKRISHT_VERMA_SET2.pdf` (5 pages) | Mismatched filename convention | Filename matches `ROLL_NUMBER_STUDENT_NAME_SET2.pdf` |
 | **T8.2** | Evidence Screenshots / Terminal | **PASS** | All 11 required evidence categories included | Fabricated or missing evidence | Real command outputs from live cluster embedded |
 | **T8.3** | Signed Formal Declaration | **PASS** | Verbatim text from exam paper with student details & date | Incomplete declaration invalidating report | Formatted in prominent callout box on page 5 |
 | **T8.4** | Moodle Portal Submission | **BLOCKED** | Manual step: student must upload PDF to university portal | Outside agent scope (requires university SSO) | Provided clear step-by-step instructions for student |
@@ -140,8 +140,8 @@ Both `docker-compose.yml` (development/build mode) and `docker-compose.deploy.ym
 #### Active Running Containers Verification:
 ```
 NAME                            IMAGE                             COMMAND                  STATUS                    PORTS
-mse-2_ssed-evening-backend-1    utkarshpandey04/backend:latest    "docker-entrypoint.s…"   Up 9 seconds (healthy)   0.0.0.0:3000->3000/tcp
-mse-2_ssed-evening-frontend-1   utkarshpandey04/frontend:latest   "/docker-entrypoint.…"   Up 10 seconds (healthy)  0.0.0.0:8080->80/tcp
+mse-2_ssed-evening-backend-1    utkrishtdv/backend:latest    "docker-entrypoint.s…"   Up 9 seconds (healthy)   0.0.0.0:3000->3000/tcp
+mse-2_ssed-evening-frontend-1   utkrishtdv/frontend:latest   "/docker-entrypoint.…"   Up 10 seconds (healthy)  0.0.0.0:8080->80/tcp
 mse-2_ssed-evening-postgres-1   postgres:16-alpine                "docker-entrypoint.s…"   Up 2 minutes (healthy)   5432/tcp (Internal)
 mse-2_ssed-evening-redis-1      redis:7-alpine                    "docker-entrypoint.s…"   Up 2 minutes (healthy)   6379/tcp (Internal)
 ```
@@ -149,7 +149,7 @@ mse-2_ssed-evening-redis-1      redis:7-alpine                    "docker-entryp
 #### Verification of Deploy File Rules:
 - `docker-compose.deploy.yml` contains **0** occurrences of `build:` directives.
 - Uses official images: `postgres:16-alpine` and `redis:7-alpine`.
-- Uses published images: `utkarshpandey04/backend:latest` and `utkarshpandey04/frontend:latest`.
+- Uses published images: `utkrishtdv/backend:latest` and `utkrishtdv/frontend:latest`.
 - Database ports `5432` and `6379` are **NOT** bound to the host interface, preventing unintended network access.
 
 ---
@@ -159,18 +159,18 @@ mse-2_ssed-evening-redis-1      redis:7-alpine                    "docker-entryp
 Images were queried directly via Docker Hub Registry V2 REST API:
 ```bash
 # Backend Tags:
-GET https://hub.docker.com/v2/repositories/utkarshpandey04/backend/tags
+GET https://hub.docker.com/v2/repositories/utkrishtdv/backend/tags
 - latest (Active) -> Digest: sha256:5a0c5adecf1f4e267ba8755195a937963fcd627165fe37320927386a0992ab43
 - v1     (Active) -> Digest: sha256:5a0c5adecf1f4e267ba8755195a937963fcd627165fe37320927386a0992ab43
 - 475f2e (Active) -> Digest: sha256:5a0c5adecf1f4e267ba8755195a937963fcd627165fe37320927386a0992ab43
 
 # Frontend Tags:
-GET https://hub.docker.com/v2/repositories/utkarshpandey04/frontend/tags
+GET https://hub.docker.com/v2/repositories/utkrishtdv/frontend/tags
 - latest (Active) -> Digest: sha256:4355ba3a16b1889d2b52d95cc0362ffc27ae945bb13ca682a563fcd6e85fabb4
 - v1     (Active) -> Digest: sha256:4355ba3a16b1889d2b52d95cc0362ffc27ae945bb13ca682a563fcd6e85fabb4
 - 475f2e (Active) -> Digest: sha256:4355ba3a16b1889d2b52d95cc0362ffc27ae945bb13ca682a563fcd6e85fabb4
 ```
-**Conclusion:** All four mandatory tags (`utkarshpandey04/backend:latest`, `utkarshpandey04/backend:v1`, `utkarshpandey04/frontend:latest`, `utkarshpandey04/frontend:v1`) are successfully built, pushed, and publicly downloadable.
+**Conclusion:** All four mandatory tags (`utkrishtdv/backend:latest`, `utkrishtdv/backend:v1`, `utkrishtdv/frontend:latest`, `utkrishtdv/frontend:v1`) are successfully built, pushed, and publicly downloadable.
 
 ---
 
@@ -244,8 +244,8 @@ Time:        1.985 s
 
 ### 4.5. Task 6: GitHub Actions Pipeline Execution
 
-- **Repository**: [`UtkarshPandey04/MSE-2-SSED-Evening`](https://github.com/UtkarshPandey04/MSE-2-SSED-Evening)
-- **Workflow Run ID**: [`44279997777`](https://github.com/UtkarshPandey04/MSE-2-SSED-Evening/actions/runs/44279997777)
+- **Repository**: [`UtkrishtVerma2005/MSE-2-SSED-Evening`](https://github.com/UtkrishtVerma2005/MSE-2-SSED-Evening)
+- **Workflow Run ID**: [`44279997777`](https://github.com/UtkrishtVerma2005/MSE-2-SSED-Evening/actions/runs/44279997777)
 - **Status**: Completed | **Conclusion**: Success (100% green) | **Duration**: 1m 29s
 - **Steps Executed & Passed**:
   1. Set up job (Success)
@@ -269,16 +269,16 @@ Time:        1.985 s
 ### 4.6. Task 7: Pull Request Status & Instructor CI Analysis
 
 - **Open Pull Request**: [PR #56 on atindeRR/MSE-2-SSED-Evening](https://github.com/atindeRR/MSE-2-SSED-Evening/pull/56)
-- **Base**: `atindeRR:main` | **Head**: `UtkarshPandey04:main`
+- **Base**: `atindeRR:main` | **Head**: `UtkrishtVerma2005:main`
 - **Changed Files (7)**:
   1. `.github/workflows/cd.yml`
-  2. `202401100400203_UTKARSH_PANDEY_SET2.pdf`
+  2. `202401100400204_UTKRISHT_VERMA_SET2.pdf`
   3. `backend/Dockerfile`
   4. `docker-compose.deploy.yml`
   5. `docker-compose.yml`
   6. `frontend/Dockerfile`
   7. `submission.json`
-- **PR Title Format**: `DOCKER-SET-2 | 202401100400203 | Utkarsh Pandey | AIML-C` (100% compliant).
+- **PR Title Format**: `DOCKER-SET-2 | 202401100400204 | Utkrisht Verma | AIML-C` (100% compliant).
 
 #### Critical Note for Examiner Regarding "Instructor CI":
 The instructor repository's `ci.yml` attempts to execute:
@@ -304,7 +304,7 @@ However, the instructor never committed the `instructor-evaluation/` folder or `
 ## 6. Actionable Next Steps for Candidate
 
 1. **Moodle Portal PDF Upload**:
-   - Locate the generated PDF: `D:\MSE-2_SSED-Evening\202401100400203_UTKARSH_PANDEY_SET2.pdf`.
+   - Locate the generated PDF: `D:\MSE-2_SSED-Evening\202401100400204_UTKRISHT_VERMA_SET2.pdf`.
    - Log in to your college Moodle portal under the **AI310B - Software Engineering and DevOps** course.
    - Upload this exact PDF file before the practical exam deadline.
 2. **Keep Docker Desktop Running**:
@@ -314,9 +314,9 @@ However, the instructor never committed the `instructor-evaluation/` folder or `
      - Backend API Health: `http://localhost:8080/health` or `http://localhost:3000/health`
 3. **Showcase Links Ready for Examiner**:
    - GitHub Pull Request: `https://github.com/atindeRR/MSE-2-SSED-Evening/pull/56`
-   - GitHub Actions Run: `https://github.com/UtkarshPandey04/MSE-2-SSED-Evening/actions`
-   - Docker Hub Backend: `https://hub.docker.com/r/utkarshpandey04/backend`
-   - Docker Hub Frontend: `https://hub.docker.com/r/utkarshpandey04/frontend`
+   - GitHub Actions Run: `https://github.com/UtkrishtVerma2005/MSE-2-SSED-Evening/actions`
+   - Docker Hub Backend: `https://hub.docker.com/r/utkrishtdv/backend`
+   - Docker Hub Frontend: `https://hub.docker.com/r/utkrishtdv/frontend`
 
 ---
 *Report generated and certified by Senior DevOps Evaluator on 2026-11-18.*
